@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Firma con IO - Università degli studi di Messina</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="../css/all.css">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="../css/bootstrap-italia.min.css">
+    <!-- Stile personalizzato -->
+    <link rel="stylesheet" href="../css/dossier_selection.css">
+    <link rel="stylesheet" href="../css/header.css">
+
+
+</head>
+<body>
+    <!-- Intestazione -->
+    <header class="bg-primary text-white py-3">
+        <div class="container d-flex justify-content-between align-items-center">
+            <h1 class="welcome">
+                <a href="profile.html" id="icon">
+                    <i class="fas fa-user" style="margin-right:5px"></i>
+                </a>
+                <span id="user-name">Nome Utente</span>
+            </h1>
+
+            <div class="d-flex align-items-center">
+                <a href="login.html" id="dossier" class="text-white link-hover">Login</a>
+                <span class="ms-2">/ Dossier</span>
+            </div>
+    
+
+            <button class="btn btn-light btn-sm d-flex align-items-center" id="logout">
+                <i class="fas fa-sign-out-alt me-2"></i> Logout
+            </button>
+        </div>
+    </header>
+    <div class="container text-center my-4">
+        <h1 >Lista Materie</h1>
+    </div>
+
+    <!-- Container per le card -->
+    <div class="container">
+        <div id="card-container">
+        </div>
+    </div>
+
+    <!-- Bootstrap Italia Bundle -->
+    <script src="../js/bootstrap-italia.bundle.min.js"></script>
+    <!-- Script personalizzato -->
+    <script src="../js/dossier_selection.js"></script>
+    <script src="../js/header.js"></script>
+
+</body>
+</html>

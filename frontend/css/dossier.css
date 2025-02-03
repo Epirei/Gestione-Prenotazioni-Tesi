@@ -1,0 +1,72 @@
+.btn-custom {
+    background-color: #06c;
+    color: #f1f8fc;
+    border: none;
+    margin-bottom: 20px;
+    margin-left: 40px;
+    border-radius: 6px;
+    cursor: pointer;
+
+}
+
+.btn-custom:hover {
+    background-color: #0258af;
+    color: #dcf1fd;
+}
+
+.dossier-name {
+    color: #06c;
+    font-weight: bold;
+}
+
+.search-icon {
+    color: #06c;
+    font-size: 20px;
+}
+
+.delete-icon {
+    color: #06c;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+
+/* Stile per l'intera tabella */
+.dossier-table {
+    width: 100%;
+    border-collapse: collapse; /* Elimina lo spazio tra i bordi delle celle */
+    margin: 20px 0;
+    font-size: 16px;
+}
+
+/* Stile per le intestazioni */
+.dossier-table thead {
+    color: #06c;
+    text-transform: uppercase;
+}
+
+.dossier-table th {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #4789b0;
+
+}
+
+/* Stile per le righe del corpo della tabella */
+.dossier-table tbody tr {
+    border-bottom: 1px solid #4789b0;
+}
+
+
+.dossier-table tbody tr:hover {
+    background-color: #ceeafc;
+    cursor: pointer;
+}
+
+/* Celle della tabella */
+.dossier-table td {
+    padding: 12px 15px;
+    text-align: left;
+    color:black;
+    font-weight: bold;
+}

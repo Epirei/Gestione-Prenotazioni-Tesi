@@ -1,0 +1,42 @@
+[
+    {
+        "nome": "Mario Rossi",
+        "materia": "Matematica"
+    },
+    {
+        "nome": "Luca Bianchi",
+        "materia": "Fisica"
+    },
+    {
+        "nome": "Giulia Verdi",
+        "materia": "Italiano"
+    },
+    {
+        "nome": "Francesca Neri",
+        "materia": "Storia"
+    },
+    {
+        "nome": "Alessandro De Luca",
+        "materia": "Inglese"
+    },
+    {
+        "nome": "Elena Galli",
+        "materia": "Scienze"
+    },
+    {
+        "nome": "Riccardo Moretti",
+        "materia": "Geografia"
+    },
+    {
+        "nome": "Martina Ferri",
+        "materia": "Arte"
+    },
+    {
+        "nome": "Davide Rizzo",
+        "materia": "Educazione Fisica"
+    },
+    {
+        "nome": "Sara Conti",
+        "materia": "Musica"
+    }
+]

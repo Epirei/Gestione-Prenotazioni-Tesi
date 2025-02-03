@@ -1,0 +1,47 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #dcf1fd;
+}
+
+
+.link-hover{
+    text-decoration: none;
+
+}
+.link-hover:hover{
+    text-decoration: underline;
+}
+
+.btn-custom-dossier {
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 6px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+#icon{
+    color: #dcf1fd;
+    text-decoration: none;
+}
+
+
+.welcome{
+    font-family: Arial,sans-serif;
+    color: #dcf1fd;
+    text-align: right;
+    margin-top:20px;
+    font-size: 24px;
+}
+
+.btn-light{
+    background-color: #dcf1fd;
+    color: #06c;
+    font-size: 18px;
+}
+
+.btn-light:hover{
+    background-color: #b0d0e2;
+    color: #06c;
+}
