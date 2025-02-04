@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded",PlansUpdater());
+document.addEventListener("DOMContentLoaded",ThesisUpdater());
 
 /*
 <div class="card-wrapper card-space">
@@ -20,14 +20,14 @@ document.addEventListener("DOMContentLoaded",PlansUpdater());
 
 
 */
-function PlansUpdater() {
+function ThesisUpdater() {
     container=document.getElementById("card-container");
     container.innerHTML=null;
-    fetch("../json_tests/bplans.json")
+    fetch("../json_tests/thesis.json")
         .then(response => response.json())
         .then(data=>{
             
-            data.forEach(piano=>
+            data.forEach(tesi=>
                {
                 const cardhtml=`<div class="card-wrapper card-space">
                 <div class="card card-bg card-big">
@@ -35,13 +35,9 @@ function PlansUpdater() {
                     <div class="top-icon">
                       <svg class="icon"><use href="../svg/sprites.svg#it-card"></use></svg>
                     </div>
-                    <h3 class="card-title h5 ">${String(piano.nome)}</h3>
-                    <p class="card-text font-serif">${String(piano.descrizione)}</p>
-                    <a class="read-more" href="subject_selection.html">
-                      <span class="text">Vai alle prenotazioni</span>
-                      <span class="visually-hidden">su Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor…</span>
-                      <svg class="icon"><use href="../svg/sprites.svg#it-arrow-right"></use></svg>
-                    </a>
+                    <h3 class="card-title h5 ">${String(tesi.nome)}</h3>
+                    <p class="card-text font-serif">${String(tesi.insegnante)}</p>
+                    <p class="card-text font-serif">${String(tesi.materia)}</p>
                   </div>
                 </div>
               </div>
