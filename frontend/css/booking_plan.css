@@ -21,11 +21,12 @@ h1{
     align-items: stretch;
     justify-content: space-between;
     flex-wrap: wrap;
+    flex-direction: column;
     
 }
 
 /* Stili per le card */
-.dossier-card {
+.subject-card {
     background-color: #fff;
     border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -37,7 +38,7 @@ h1{
 }
 
 /* Immagine della card */
-.dossier-card img {
+.subject-card img {
     max-height: 180px;
     object-fit:cover;
     width: 100%;
@@ -46,7 +47,7 @@ h1{
 
 }
 
-.dossier-card button{
+.subject-card button{
     width: 100%;
     height: 100%;
     border-radius: 12px;
@@ -55,17 +56,17 @@ h1{
     font-size: 22px;
 }
 /* Titolo della card */
-.dossier-card h5,h4{
+.subject-card h5,h4{
     font-size: 22px !important;
     color: #06c !important; 
     margin-bottom: 0px !important;
 }
 
-.dossier-card {
+.subject-card {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.dossier-card:hover {
+.subject-card:hover {
     transform: scale(1.03); /* Ingrandisce la card del 5% */
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Aggiunge un'ombra */
 }

@@ -4,15 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Firma con IO - Università degli studi di Messina</title>
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="../css/bootstrap-italia.min.css">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="../css/all.css">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="../css/bootstrap-italia.min.css">
     <!-- Stile personalizzato -->
-    <link rel="stylesheet" href="../css/richiesta.css">
+    <link rel="stylesheet" href="../css/booking_plan.css">
     <link rel="stylesheet" href="../css/header.css">
 
+
 </head>
+<body>
     <!-- Intestazione -->
     <header class="bg-primary text-white py-3">
         <div class="container d-flex justify-content-between align-items-center">
@@ -22,34 +24,33 @@
                 </a>
                 <span id="user-name">Nome Utente</span>
             </h1>
-            <button class="btn btn-light btn-sm d-flex align-items-center" id="dossier">
-                <i class="fas fa-folder-open me-2"></i>Dossier
-            </button>
+
+            <div class="d-flex align-items-center">
+                <a href="login.html" id="dossier" class="text-white link-hover">Login</a>
+                <span class="ms-2">/ Dossier</span>
+            </div>
+    
 
             <button class="btn btn-light btn-sm d-flex align-items-center" id="logout">
                 <i class="fas fa-sign-out-alt me-2"></i> Logout
             </button>
         </div>
     </header>
+    <div class="container text-center my-4">
+        <h1 >Piani di prenotazioni</h1>
+    </div>
 
-    <body>
-        <div class="container py-4">
-            <div class="card custom">
-                <div class="d-flex align-items-center">
-                    <button id="back" class="back"><i class="fas fa-arrow-left"></i></button>            
-                    <h1>Dettaglio Richiesta</h1>
-                </div>
-                <div id="requestDetails" class="card-body">
-                    <!-- Qui andrà il contenuto dinamico -->
-                </div>
-            </div>
+    <!-- Container per le card -->
+    <div class="container">
+        <div id="card-container">
+            
         </div>
-    </body>
+    </div>
 
     <!-- Bootstrap Italia Bundle -->
     <script src="../js/bootstrap-italia.bundle.min.js"></script>
     <!-- Script personalizzato -->
-    <script src="../js/richiesta0.js"></script>
+    <script src="../js/booking_plans.js"></script>
     <script src="../js/header.js"></script>
 
 </body>

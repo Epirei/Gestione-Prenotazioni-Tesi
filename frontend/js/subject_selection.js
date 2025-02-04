@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded",SubjectUpdater());
 
 /*
-<div class="card dossier-card" data-link="dossier.html">
+<div class="card dossier-card">
                         <div class="card-body text-center">
                             <h5 class="card-title">Nome Materia</h5>
                             
@@ -23,7 +23,7 @@ function SubjectUpdater() {
             
             data.forEach(teacher=>
                {
-                const cardhtml=`<div class="card dossier-card" data-link="dossier.html">
+                const cardhtml=`<div class="card subject-card">
                         <div class="card-body text-center">
                             <h5 class="card-title">${teacher.materia}</h5>
                             
