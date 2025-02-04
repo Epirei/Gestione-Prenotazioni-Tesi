@@ -15,10 +15,12 @@ document.addEventListener("DOMContentLoaded",SubjectUpdater());
 
 */
 function SubjectUpdater() {
+    container=document.getElementById("card-container");
+    container.innerHTML=null;
     fetch("../json_tests/prova.json")
         .then(response => response.json())
         .then(data=>{
-            container=document.getElementById("card-container");
+            
             data.forEach(teacher=>
                {
                 const cardhtml=`<div class="card dossier-card" data-link="dossier.html">
@@ -29,7 +31,7 @@ function SubjectUpdater() {
                         <img src="../assets/dossier.jpg" class="card-img-top" >
                         <div class="card-body text-center">
                         <h4 class="card-title">${teacher.nome}</h4>
-                        <button type="button">Richiesta Tesi</button>
+                        <button type="button" onclick="ThesisConfirmation('${String(teacher.nome)}', '${String(teacher.materia)}')">Richiesta Tesi</button>
                         
                     </div>
                 `   
@@ -40,4 +42,7 @@ function SubjectUpdater() {
 )
 }
 
-
+function ThesisConfirmation(professore, materia) {
+    ThesisName=window.prompt("Inserisci il nome della tesi:","");
+    window.confirm(`il nome della tesi è ${ThesisName}.\n Sei sicuro di voler confermare la tesi della materia ${materia} con il professore ${professore}`)
+}
