@@ -38,7 +38,7 @@ h1{
 
 /* Immagine della card */
 .subject-card img {
-    max-height: 180px;
+    max-height: 140px;
     object-fit:cover;
     width: 100%;
     margin-top: 10px;
@@ -53,6 +53,7 @@ h1{
     background-color: #06c;
     color: #fff;
     font-size: 22px;
+    max-height: 87px;
 }
 /* Titolo della card */
 .subject-card h5,h4{

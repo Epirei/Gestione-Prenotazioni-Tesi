@@ -7,9 +7,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // Gestione del pulsante per tornare alla selezione dei dossier
-    const dossierButton = document.getElementById("dossier");
+    const dossierButton = document.getElementById("prenotazioni");
     dossierButton.addEventListener("click", () => {
-        window.location.href = "dossier_selection.html"; // Reindirizza alla selezione dei dossier
+        window.location.href = "booking_plans.html"; // Reindirizza alla selezione dei dossier
     });
 
     const icon = document.getElementById("icon");
