@@ -1,0 +1,167 @@
+openapi: 3.0.0
+info:
+  title: Booking API
+  version: 1.0.0
+paths:
+  /api/booking-plans/:
+    get:
+      summary: Lista piani di prenotazione
+      responses:
+        '200':
+          description: Lista dei piani disponibili per l'utente
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BookingPlan'
+  /api/booking-plans/{plan_id}/:
+    get:
+      summary: Dettagli di un piano di prenotazione
+      parameters:
+        - in: path
+          name: plan_id
+          schema:
+            type: integer
+          required: true
+          description: ID del piano
+      responses:
+        '200':
+          description: Dettagli del piano con relativi slot
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BookingPlanDetail'
+        '404':
+          description: Piano non trovato
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+  /api/book-slot/{slot_id}/:
+    post:
+      summary: Prenota uno slot
+      parameters:
+        - in: path
+          name: slot_id
+          schema:
+            type: integer
+          required: true
+          description: ID dello slot da prenotare
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Prenotazione effettuata con successo
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BookingResponse'
+        '400':
+          description: Errore di validazione, periodo non valido o slot esaurito
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '403':
+          description: Accesso negato o prenotazione già esistente
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+  /api/slot-reservations/{slot_id}/:
+    get:
+      summary: Visualizza prenotazioni per uno slot (solo per manager)
+      parameters:
+        - in: path
+          name: slot_id
+          schema:
+            type: integer
+          required: true
+          description: ID dello slot
+      responses:
+        '200':
+          description: Lista delle prenotazioni per lo slot
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Reservation'
+        '403':
+          description: Accesso negato
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+components:
+  schemas:
+    BookingPlan:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        slot_name:
+          type: string
+        slot_description:
+          type: string
+        allow_multiple_slots:
+          type: boolean
+    BookingPlanDetail:
+      allOf:
+        - $ref: '#/components/schemas/BookingPlan'
+        - type: object
+          properties:
+            slots:
+              type: array
+              items:
+                $ref: '#/components/schemas/BookingSlot'
+    BookingSlot:
+      type: object
+      properties:
+        id:
+          type: integer
+        description:
+          type: string
+        available_seats:
+          type: integer
+        date_opening:
+          type: string
+          format: date-time
+        date_closing:
+          type: string
+          format: date-time
+        reservations_count:
+          type: integer
+    BookingResponse:
+      type: object
+      properties:
+        message:
+          type: string
+        reservation_id:
+          type: integer
+        reservation_code:
+          type: string
+    Reservation:
+      type: object
+      properties:
+        user:
+          type: string
+        timestamp:
+          type: string
+          format: date-time
+        reservation_code:
+          type: string
+    ErrorResponse:
+      type: object
+      properties:
+        error:
+          type: string
+        error_code:
+          type: integer
