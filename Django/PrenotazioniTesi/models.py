@@ -7,11 +7,8 @@ from django.utils import timezone
 
 class BookingPlan(models.Model):
     name = models.CharField(max_length=255)
-    slot_name = models.CharField(
-        max_length=255,
-        help_text="Nome generico per gli slot (es. 'Materia/Docente')"
-    )
-    slot_description = models.CharField(
+    
+    description = models.CharField(
         max_length=255,
         blank=True,
         help_text="Descrizione/istruzioni per la scelta dello slot (es. 'Seleziona il nome della disciplina/Docente di tua scelta')"
@@ -31,13 +28,18 @@ class BookingSlot(models.Model):
         related_name='slots',
         on_delete=models.CASCADE
     )
+    subject = models.CharField(
+        max_length=255,
+        blank=False,
+        help_text="Nome della materia dello slot (es. 'Materia/Docente')"
+        )
     description = models.TextField()
     available_seats = models.PositiveIntegerField(default=0)
     date_opening = models.DateTimeField()
     date_closing = models.DateTimeField()
 
     def __str__(self):
-        return f"{self.booking_plan.slot_name} - {self.description}"
+        return f"{self.booking_plan.name} - {self.subject}"
 
 class BookingReservation(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -48,6 +50,7 @@ class BookingReservation(models.Model):
     )
     timestamp = models.DateTimeField(auto_now_add=True)
     reservation_code = models.CharField(max_length=64, unique=True, blank=True)
+    thesis_name = models.CharField(max_length=255, blank=False)
 
     class Meta:
         unique_together = ('user', 'booking_slot')
