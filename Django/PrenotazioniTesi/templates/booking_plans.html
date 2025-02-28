@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prenotazioni Tesi - Università degli studi di Messina</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="{% static 'css/all.css' %}">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap-italia.min.css' %}">
+    <!-- Stile personalizzato -->
+    <link rel="stylesheet" href="{% static 'css/booking_plan.css' %}">
+    <link rel="stylesheet" href="{% static 'css/header.css' %}">
+<script>
+        var staticUrl = "{% static '' %}";
+    </script>
+</head>
+<body>
+    <!-- Intestazione -->
+    <header class="bg-primary text-white py-3">
+        <div class="container d-flex justify-content-between align-items-center">
+            <h1 class="welcome">
+                <a href="profile.html" id="icon">
+                    <i class="fas fa-user" style="margin-right:5px"></i>
+                </a>
+                <span id="user-name">Nome Utente</span>
+            </h1>
+
+            <div class="d-flex align-items-center">
+                <a href="login.html" id="prenotazioni" class="text-white link-hover">Login</a>
+                <span class="ms-2">/ Piano</span>
+            </div>
+    
+            <button class="btn btn-light btn-sm d-flex align-items-center" id="logout">
+                <i class="fas fa-sign-out-alt me-2"></i> Logout
+            </button>
+        </div>
+    </header>
+    <div class="container text-center my-4">
+        <h1>Piani di prenotazioni</h1>
+    </div>
+
+    <!-- Container per le card -->
+    <div class="container">
+        <div id="card-container">
+            
+        </div>
+    </div>
+
+    <!-- Bootstrap Italia Bundle -->
+    <script src="{% static 'js/bootstrap-italia.bundle.min.js' %}"></script>
+    <!-- Script personalizzato -->
+    <script src="{% static 'js/booking_plans.js' %}"></script>
+    <script src="{% static 'js/header.js' %}"></script>
+
+</body>
+</html>

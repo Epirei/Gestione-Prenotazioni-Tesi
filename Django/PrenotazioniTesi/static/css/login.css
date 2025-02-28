@@ -1,0 +1,54 @@
+/* Cambia il colore di sfondo della pagina */
+body {
+    background-color: #0d3e6e;
+    /*background-color: #0d3e6e;*/
+    font-family: Arial, sans-serif;
+}
+
+/* Colore personalizzato per i titoli */
+h3 {
+    color: #004085;
+}
+
+
+/* Pulsante personalizzato (sovrascrive il pulsante Bootstrap) */
+.btn-primary {
+    background-color: #0056b3;
+    border-color: #0056b3;
+    color: #ffffff;
+}
+
+.btn-primary:hover {
+    background-color: #003f88;
+    border-color: #003f88;
+    color: #ffffff;
+}
+
+/* Label con stile blu */
+.form-label {
+    color: #004085;
+}
+
+/* Card Login */
+.card {
+    border-radius: 8px;
+    animation: fadeInScale 1s ease-in-out;
+
+}
+
+/* Logo */
+.logo-container img {
+    animation: fadeInScale 1s ease-in-out;
+}
+
+/* Animazioni */
+@keyframes fadeInScale {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}

@@ -1,0 +1,8 @@
+footer{
+    text-align: center;
+    font-size: 14px;
+    padding: 10px 0;
+    position: relative; /* Permette l'uso di posizionamento assoluto nel contenitore */
+    bottom: 0;
+    width: 100%;
+}

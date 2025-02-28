@@ -1,7 +1,7 @@
 import json
 from django.http import JsonResponse
 from django.views import View
-from django.shortcuts import get_object_or_404
+from django.shortcuts import get_object_or_404, render
 from django.utils.timezone import now
 from django.contrib.auth.models import User
 from .models import BookingPlan, BookingSlot, BookingReservation
@@ -87,3 +87,16 @@ class TeacherListView(View):
         response["Access-Control-Allow-Methods"] = "GET, OPTIONS"
         response["Access-Control-Allow-Headers"] = "Content-Type"
         return response
+
+def booking_plans_view(request):
+    return render(request, 'booking_plans.html')
+
+def profile_view(request):
+    return render(request, 'profile.html')
+
+
+def thesis_view(request):
+    return render(request, 'thesis.html')
+
+def subject_selection_view(request,plan_id):
+    return render(request, ('subject_selection.html?plan_id='+str(plan_id)))
